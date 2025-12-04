@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <title>11º Aberto de Duplas da FPCG</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- BARRA SUPERIOR COM A LOGO PEQUENA -->
+<header class="header" style="background-color: #002917; padding: 10px 0;">
+  <div class="header-inner" style="display: flex; justify-content: center; align-items: center;">
+    <img 
+      src="assets/img/logo.png" 
+      alt="Logo do Evento" 
+      class="logo"
+      style="width: 200px; height: auto;"
+    />
+  </div>
+</header>
+
+<!-- FOTO DO GOLF CLUB COM O TÍTULO FIXO POR CIMA -->
+<section class="hero"
+  style="
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-image: url('assets/img/golfclub.jpg');
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+  "
+>
+
+  <!-- Overlay degradê -->
+  <div class="hero-overlay" 
+       style="
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: linear-gradient(to bottom, rgb(0, 41, 24) 0%, rgba(0, 0, 0, 0) 100%);
+       z-index: 1;
+       ">
+  </div>
+
+  <!-- Imagem do título do Canva -->
+  <img src="assets/img/titulo-canva.png" 
+       alt="Bem-vindo ao 11º Aberto de Duplas da FPCG" 
+       class="hero-title-img"
+       style="
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         max-width: 97%;
+         height: auto;
+         z-index: 2;
+       ">
+</section>
+
+
+<section class="intro">
+  <p class="intro-text">
+    Utilize o guia abaixo para explorar as categorias e visualizar os mapas interativos
+    com informações durante o evento.
+  </p>
+  <p class="intro-sub1">Toque em um cartão para abrir o mapa correspondente.</p>
+</section>
+
+<main class="main">
+  <div id="mapList" class="map-grid"></div>
+
+  <div class="map-frame-container">
+    <iframe id="mapFrame" src="" allowfullscreen loading="lazy"></iframe>
+  </div>
+</main>
+
+<footer class="footer">
+  © 2025 Ponta Grossa Golf Club
+</footer>
+
+<script src="assets/js/maps.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

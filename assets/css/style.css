@@ -1,0 +1,181 @@
+:root {
+  --green-900: #123524;
+  --green-700: #002917;
+  --green-200: #dfeee8;
+  --gold-500: #c9a86a;
+  --white: #ffffff;
+  --text-dark: #102116;
+  --radius: 16px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* BASE */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* HEADER */
+.header {
+  background: var(--green-700);
+  padding: 0.6rem 1rem;
+  text-align: center;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 55px;
+  width: auto;
+}
+
+/* HERO (CORRIGIDO PARA CELULARES) */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 300px;  /* mantém a altura desejada */
+  height: auto;       /* evita espaço fantasma no iPhone */
+  overflow: hidden;
+  padding: 0;
+
+  /* melhora o comportamento do background no Safari/iPhone */
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Imagem do título */
+.hero-title-img {
+  max-width: 95%;
+}
+
+/* INTRO */
+.intro {
+  text-align: center;
+  padding: 0.8rem 1rem;
+}
+
+.intro-text {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0.5rem auto 0.2rem auto;
+}
+
+.intro-sub {
+  margin-top: 0.2rem;
+  color: var(--green-700);
+}
+
+/* GRID */
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* CARD */
+.map-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+  border-left: 6px solid var(--green-700);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.map-card:hover {
+  transform: translateY(-3px);
+  background: #faf7ef;
+}
+
+.map-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.map-card small {
+  display: block;
+  margin-top: 0.4rem;
+  opacity: 0.7;
+}
+
+.map-card.full-width {
+  grid-column: 1 / -1;
+  background: linear-gradient(180deg, #f7f4ea, #fff9ef);
+  border-left: 8px solid var(--green-700);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.map-card.full-width .map-card-title {
+  font-size: 1.35rem;
+}
+
+/* MAP FRAME */
+.map-frame-container {
+  max-width: 1100px;
+  margin: 1rem auto 3rem auto;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.map-frame-container iframe {
+  width: 100%;
+  height: 70vh;
+  border: none;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--green-700);
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 220px;
+    height: auto; /* mantém compatibilidade com iOS */
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .map-frame-container iframe {
+    height: 55vh;
+  }
+
+  .map-card.full-width {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .map-card.full-width .map-card-title {
+    font-size: 1.15rem;
+  }
+}
