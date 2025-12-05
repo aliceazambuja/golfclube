@@ -145,6 +145,31 @@ body {
   border: none;
 }
 
+
+.pre-footer-logos {
+  display: flex;
+  justify-content: space-between; /* uma na esquerda, outra na direita */
+  align-items: center;
+  max-width: 1100px; /* mesma largura do conteúdo */
+  margin: 1rem auto 1rem auto; /* espaçamento acima e abaixo */
+  padding: 0 0,5rem; /* garante espaço nas laterais */
+  flex-wrap: wrap; /* responsivo para telas pequenas */
+}
+
+.pre-footer-logo {
+  height: 50px; /* tamanho padrão */
+  width: auto;
+}
+
+/* Tamanhos individuais */
+.left-logo {
+  height: 65px; /* ajuste individual */
+}
+
+.right-logo {
+  height: 60px; /* ajuste individual */
+}
+
 /* FOOTER */
 .footer {
   text-align: center;
@@ -154,11 +179,18 @@ body {
   font-size: 0.9rem;
 }
 
+@media (max-width: 600px) {
+  .pre-footer-logos {
+    justify-content: center;
+    gap: 0,5rem; /* espaço entre as logos quando empilhadas */
+  }
+}
+
 /* RESPONSIVO */
 @media (max-width: 600px) {
   .hero {
     min-height: 220px;
-    height: auto; /* mantém compatibilidade com iOS */
+    height: auto;
   }
 
   .logo {
@@ -179,3 +211,4 @@ body {
     font-size: 1.15rem;
   }
 }
+
