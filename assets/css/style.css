@@ -145,30 +145,33 @@ body {
   border: none;
 }
 
-
 .pre-footer-logos {
   display: flex;
-  justify-content: space-between; /* uma na esquerda, outra na direita */
+  justify-content: space-between;
   align-items: center;
-  max-width: 1100px; /* mesma largura do conteúdo */
-  margin: 1rem auto 1rem auto; /* espaçamento acima e abaixo */
-  padding: 0 0,5rem; /* garante espaço nas laterais */
-  flex-wrap: wrap; /* responsivo para telas pequenas */
+  max-width: 1100px;
+  margin: 1rem auto 1rem auto;
+  padding: 0 1rem;
+  flex-wrap: nowrap; /* garante que não empilhe */
 }
 
 .pre-footer-logo {
-  height: 50px; /* tamanho padrão */
+  height: 60px; /* tamanho padrão */
   width: auto;
 }
 
-/* Tamanhos individuais */
-.left-logo {
-  height: 65px; /* ajuste individual */
+@media (max-width: 600px) {
+  .pre-footer-logos {
+    flex-direction: column; /* empilha verticalmente em celular */
+    gap: 0,5rem; /* espaçamento entre as logos */
+    align-items: center;
+  }
+
+  .left-logo, .right-logo {
+    height: 60px; /* reduz um pouco o tamanho */
+  }
 }
 
-.right-logo {
-  height: 60px; /* ajuste individual */
-}
 
 /* FOOTER */
 .footer {
@@ -179,12 +182,6 @@ body {
   font-size: 0.9rem;
 }
 
-@media (max-width: 600px) {
-  .pre-footer-logos {
-    justify-content: center;
-    gap: 0,5rem; /* espaço entre as logos quando empilhadas */
-  }
-}
 
 /* RESPONSIVO */
 @media (max-width: 600px) {
